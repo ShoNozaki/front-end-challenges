@@ -38,6 +38,12 @@ const Column = () => {
 		console.log("Entering Zone")
 		if(e.target !== dragEl.current){
 			console.log("I Am Different")
+			setList(oldList => {
+				let newList = JSON.parse(JSON.stringify(oldList))
+				newList.items.splice(itemI, 0, newList.items.splice(dragItem.current,1)[0])
+				dragItem.current = itemI
+				return newList
+			})
 		}
 	}
 
