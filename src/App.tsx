@@ -1,5 +1,5 @@
 import React from "react";
-import Columnn from "../Column";
+import Columnn from "./components/Column/Column";
 
 const App: React.FC = () => <Columnn/>;
 
