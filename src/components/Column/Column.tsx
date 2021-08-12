@@ -10,22 +10,22 @@ const data = {
 const Column = () => {
 	const [list, setList] = useState(data)
 
-	const currentItem = useRef()
+	const dragItem: any = useRef()
 
-	const handleDragStart = (e: any) => {
-		// console.log(e.target)
-		currentItem.current = e.target
+	const handleDragStart = (e:React.DragEvent<HTMLDivElement>, params: number) => {
+		dragItem.current = params
 	}
 
 	return (
 		<div className="column">
 			<div className="heading">{list.title}</div>
-			{list.items.map(item => {
+			{list.items.map((item, itemI) => {
 			  return (	
 					<div 
+					key={item}
 					className="column-item"
 					draggable
-					onDragStart={handleDragStart} 
+					onDragStart={(e) => {handleDragStart(e, itemI)}} 
 					>
 						<p>Item {item}</p>
 					</div>	
