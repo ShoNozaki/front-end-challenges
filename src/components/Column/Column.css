@@ -24,3 +24,7 @@
 .column-item:not(:last-child) {
 	margin-bottom: 0.5rem;
 }
+
+.current {
+	background: rgb(39, 36, 36);
+}

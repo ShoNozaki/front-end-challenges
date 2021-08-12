@@ -18,6 +18,13 @@ const Column = () => {
 		setIsDragging(true)
 	}
 
+	const getStyles = (itemI: number) => {
+		if(itemI === dragItem.current){
+			return 'current column-item'
+		}
+		return "column-item"
+	}
+
 	return (
 		<div className="column">
 			<div className="heading">{list.title}</div>
@@ -25,7 +32,7 @@ const Column = () => {
 			  return (	
 					<div 
 					key={item}
-					className="column-item"
+					className={isDragging?getStyles(itemI):"column-item"}
 					draggable
 					onDragStart={(e) => {handleDragStart(e, itemI)}} 
 					>
