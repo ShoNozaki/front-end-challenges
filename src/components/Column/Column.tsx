@@ -15,7 +15,7 @@ const Column = () => {
 			<div className="heading">{list.title}</div>
 			{list.items.map(item => {
 			  return (	
-					<div className="column-item">
+					<div draggable className="column-item">
 						<p>Item {item}</p>
 					</div>	
 			  )
