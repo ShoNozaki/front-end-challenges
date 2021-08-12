@@ -35,9 +35,9 @@ const Column = () => {
 	}
 
 	const handleDragEnter = (e: React.DragEvent<HTMLDivElement>, itemI: number) => {
-		console.log("Entering Zone")
+		// console.log("Entering Zone")
 		if(e.target !== dragEl.current){
-			console.log("I Am Different")
+			// console.log("I Am Different")
 			setList(oldList => {
 				let newList = JSON.parse(JSON.stringify(oldList))
 				newList.items.splice(itemI, 0, newList.items.splice(dragItem.current,1)[0])
