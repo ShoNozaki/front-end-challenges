@@ -9,11 +9,13 @@ const data = {
 
 const Column = () => {
 	const [list, setList] = useState(data)
+	const [isDragging, setIsDragging] = useState(false)
 
 	const dragItem: any = useRef()
 
 	const handleDragStart = (e:React.DragEvent<HTMLDivElement>, params: number) => {
 		dragItem.current = params
+		setIsDragging(true)
 	}
 
 	return (
