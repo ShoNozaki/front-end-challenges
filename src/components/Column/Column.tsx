@@ -18,7 +18,10 @@ const Column = () => {
 		dragItem.current = params
 		dragEl.current = e.target
 		dragEl.current.addEventListener("dragend", handleDragEnd)
-		setIsDragging(true)
+		//Prevents change of styling for dragged element
+		setTimeout(()=> {
+			setIsDragging(true)
+		}, 0)
 	}
 
 	const handleDragEnd =() => {
