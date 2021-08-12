@@ -34,6 +34,13 @@ const Column = () => {
 		setIsDragging(false)
 	}
 
+	const handleDragEnter = (e: React.DragEvent<HTMLDivElement>, itemI: number) => {
+		console.log("Entering Zone")
+		if(e.target !== dragEl.current){
+			console.log("I Am Different")
+		}
+	}
+
 	const getStyles = (itemI: number) => {
 		if(itemI === dragItem.current){
 			return 'current column-item'
@@ -50,6 +57,7 @@ const Column = () => {
 					key={item}
 					className={isDragging?getStyles(itemI):"column-item"}
 					draggable
+					onDragEnter={isDragging?(e)=>{handleDragEnter(e, itemI)}:undefined}
 					onDragStart={(e) => {handleDragStart(e, itemI)}} 
 					>
 						<p>Item {item}</p>
