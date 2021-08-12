@@ -11,8 +11,8 @@ const Column = () => {
 	const [list, setList] = useState(data)
 	const [isDragging, setIsDragging] = useState(false)
 
-	const dragItem = useRef<number>()
-	const dragEl = useRef<EventTarget>()
+	const dragItem = useRef<number | null>(null)
+	const dragEl = useRef<EventTarget | null>(null)
 
 	const handleDragStart = (e:React.DragEvent<HTMLDivElement>, params: number) => {
 		dragItem.current = params
@@ -22,7 +22,13 @@ const Column = () => {
 	}
 
 	const handleDragEnd =() => {
-		console.log('Ending Drag')
+		// console.log('Ending Drag')
+		if(dragEl.current){
+			dragEl.current.removeEventListener("dragend", handleDragEnd)
+		}
+		dragEl.current = null
+		dragItem.current = null
+		setIsDragging(false)
 	}
 
 	const getStyles = (itemI: number) => {
