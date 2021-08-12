@@ -4,7 +4,10 @@ import './Column.css'
 const Column = () => {
 	return (
 		<div className="column">
-		This is a Column	
+			<div className="heading">Title 1</div>
+			<div className="column-item">Item 1</div>
+			<div className="column-item">Item 2</div>
+			<div className="column-item">Item 3</div>	
 		</div>
 	)
 }
