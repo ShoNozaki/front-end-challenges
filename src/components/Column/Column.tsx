@@ -4,10 +4,16 @@ import './Column.css'
 const Column = () => {
 	return (
 		<div className="column">
-			<div className="heading">Title 1</div>
-			<div className="column-item">Item 1</div>
-			<div className="column-item">Item 2</div>
-			<div className="column-item">Item 3</div>	
+			<div className="heading">Group 1</div>
+				<div className="column-item">
+					<p>Item 1</p>
+				</div>
+				<div className="column-item">
+					<p>Item 2</p>
+				</div>
+				<div className="column-item">
+					<p>Item 3</p>
+				</div>	
 		</div>
 	)
 }
