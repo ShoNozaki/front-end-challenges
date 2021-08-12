@@ -3,7 +3,7 @@ import Columnn from "./components/Column/Column";
 
 import "./App.css"
 
-const App: React.FC = () => {
+const App = () => {
  return (
 	 <div id="App">
 		 <Columnn/>

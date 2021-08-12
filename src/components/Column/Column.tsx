@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Column.css'
 
+const data = {
+	title: "Group 1",
+	items: ["1", "2", "3"]
+}
+
+
 const Column = () => {
+	const [list, setList] = useState(data)
+
 	return (
 		<div className="column">
-			<div className="heading">Group 1</div>
-				<div className="column-item">
-					<p>Item 1</p>
-				</div>
-				<div className="column-item">
-					<p>Item 2</p>
-				</div>
-				<div className="column-item">
-					<p>Item 3</p>
-				</div>	
+			<div className="heading">{list.title}</div>
+			{list.items.map(item => {
+			  return (	
+					<div className="column-item">
+						<p>Item {item}</p>
+					</div>	
+			  )
+			})}
 		</div>
 	)
 }
